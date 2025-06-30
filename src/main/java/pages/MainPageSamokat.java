@@ -14,12 +14,17 @@ import org.openqa.selenium.By;
 
 public class MainPageSamokat {
     private final WebDriver driver;
-
+    //УРЛ
     private final String websiteURL = "https://qa-scooter.praktikum-services.ru";
+    //Кнопка Пинять куки
     private final By acceptCookiesButton = By.xpath(".//button[@id='rcc-confirm-button']");
+    //Аккордеон
     private final By accordionBlock = By.xpath("//*[@id='root']/div/div/div[5]/div[2]/div");
+    //Кнопка Заказать маленькая
     private final By createOrderTopButton = By.xpath("//button[text()='Заказать' and @class='Button_Button__ra12g']");
+    //Кнопка Заказать большая
     private final By createOrderBottomButton = By.xpath("//*[@id='root']/div/div/div[4]/div[2]/div[5]/button");
+    //Форма заказа
     private final By createorderForm = By.xpath("/html/body/div/div/div[2]");
 
 

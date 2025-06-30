@@ -8,8 +8,8 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.CreateOrderPageSamokat;
-import pageObjects.MainPageSamokat;
+import pages.CreateOrderPageSamokat;
+import pages.MainPageSamokat;
 
 import java.util.stream.Stream;
 
