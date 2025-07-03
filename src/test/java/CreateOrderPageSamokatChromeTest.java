@@ -23,7 +23,7 @@ public class CreateOrderPageSamokatChromeTest {
     public void setUp() {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
 
         createOrderPage = new CreateOrderPageSamokat(driver);

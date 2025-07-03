@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
-
 public class CreateOrderPageSamokat {
     private final WebDriver driver;
     //поле Имя
@@ -45,7 +44,11 @@ public class CreateOrderPageSamokat {
     //кнопка Да на форме Хотите оформить заказ
     public final By confirmOrderButton = By.xpath("//div[@class='Order_Modal__YZ-d3']//button[text()='Да']");
     //окно Заказ оформлен
-    private final By successCreatingOrderWindow = By.xpath(".//*[@class='Order_Modal__YZ-d3']");
+    public final By successCreatingOrderWindow = By.xpath(".//*[@class='Order_Modal__YZ-d3']");
+    //Хэдер окна Заказ оформлен
+    public static final By orderCreatedModalHeader = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
+    //Текст окна Заказ оформлен
+    public static final By orderCreatedModalText = By.xpath("//div[@class='Order_Text__2broi']");
 
     public CreateOrderPageSamokat(WebDriver driver) {
         this.driver = driver;
@@ -149,13 +152,10 @@ public class CreateOrderPageSamokat {
     public boolean assertSuccessWindowIsDisplayed() {
         try {
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            WebElement successWindow = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(successCreatingOrderWindow)
-            );
-            return successWindow.isDisplayed();
+            String successWindowHeader= driver.findElement(successCreatingOrderWindow).getText();
+            return successWindowHeader.contains("Заказ оформлен");
+
         } catch (Exception e) {
             return false;
         }
-    }
-}
+}}
